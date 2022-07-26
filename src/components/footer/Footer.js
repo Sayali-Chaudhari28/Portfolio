@@ -1,7 +1,5 @@
 import React from 'react'
 import './footer.css'
-import {IoLogoTwitter} from 'react-icons/io'
-import { MdOutlineEmail } from 'react-icons/md'
 
 export const Footer = () => {
   return (

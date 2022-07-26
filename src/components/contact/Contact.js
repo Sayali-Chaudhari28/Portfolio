@@ -20,7 +20,7 @@ export const Contact = () => {
           <article className='contact__option'>
             <AiOutlineLinkedin className='contact__option-icon'/>
             <h4>LinkedIn</h4>
-            <a href='https://www.linkedin.com/in/sayali-chaudhari-2801/' target={'_blank'}>Connect with me on LinkedIn</a>
+            <a href='https://www.linkedin.com/in/sayali-chaudhari-2801/' target={'_blank'} rel="noopener noreferrer">Connect with me on LinkedIn</a>
           </article>
         </div>
       </div>
