@@ -1,57 +1,57 @@
-import React from 'react'
-import './portfolio.css'
-import IMG1 from '../../assets/ecommerce.jpg'
-import IMG2 from '../../assets/Microsoft_Teams_logo.jpg'
-import IMG3 from '../../assets/covid-helpline.png'
+import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import './portfolio.css';
+import IMG1 from '../../assets/civil_contractors_app.jpg';
+import IMG2 from '../../assets/Microsoft_Teams_logo.jpg';
 
 const data = [
   {
     id: 1,
     image: IMG1,
-    title: "E-commerce Web app",
-    github: "",
-    demo: ""
+    title: "Civil contractors app",
+    description: "A mobile application developed in Flutter and Firebase that provides a comprehensive platform for managing civil construction projects. The app includes features such as project management, task tracking, document sharing, and communication tools for contractors, clients, and team members. One of the key highlights of the app is the integrated payment gateway, which allows users to make secure and convenient payments for services and materials. The payment gateway ensures smooth and efficient financial transactions within the app, enhancing the overall user experience.",
   },
   {
     id: 2,
     image: IMG2,
     title: "Microsoft Teams Clone",
-    github: "https://github.com/Sayali-Chaudhari28/Microsoft_Team_Clone",
-    demo: "https://ms-teams-engage21.netlify.app/"
+    description: "",
   },
-  {
-    id: 3,
-    image: IMG3,
-    title: "Covid Helpline",
-    github: "https://github.com/Sayali-sChaudhari28/Covid_Helpline",
-    demo: "https://github.com/Sayali-Chaudhari28/Covid_Helpline"
-  }
-]
+];
 
 export const Portfolio = () => {
   return (
-    <section id='portfolio'>
-      <h5> My Recent Work</h5>
-      <h2>Portfolio</h2>
-
+    <section id='portfolio' className='portfolio-section'>
+      <h2>My Recent Work</h2>
+    
       <div className='container portfolio__container'>
-        {
-          data.map(({id, image, title, github, demo}) =>{
-            return(
-              <article key={id} className='portfolio__item'>
-                <div className='portfolio__item-image'>
-                  <img id='portfolioimg' src = {image} alt={title} />
-                </div>
+        <Carousel
+          showArrows={true}
+          infiniteLoop={true}
+          renderIndicator={(onClickHandler, isSelected, index, label) => (
+            <div
+              key={index}
+              className={`custom-indicator ${isSelected ? 'selected' : ''}`}
+              onClick={onClickHandler}
+            >
+              <img src={data[index].image} alt={data[index].title} />
+            </div>
+          )}
+        >
+          {data.map(({ id, image, title, description }) => (
+            <article key={id} className='portfolio__item'>
+              <div className='portfolio__item-image'>
+                <img id='portfolioimg' src={image} alt={title} />
+              </div>
+              <div className='portfolio__item-content'>
                 <h3>{title}</h3>
-                <div className='portfolio__item-cta'>
-                  <a href={github} className='btn' target='_blank' rel="noopener noreferrer">Github</a>
-                  <a href={demo} className='btn' target='_blank'rel="noopener noreferrer" >Live Demo</a>
-                </div>
-              </article>
-            )
-          })
-        }
+                <p>{description}</p>
+              </div>
+            </article>
+          ))}
+        </Carousel>
       </div>
     </section>
-  )
-}
+  );
+};
