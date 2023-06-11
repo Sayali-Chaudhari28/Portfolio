@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import cv from '../../assets/cv.pdf';
-import './header.css'
+import './header.css';
 
 const CTA = () => {
   const [showResume, setShowResume] = useState(false);
@@ -14,12 +14,15 @@ const CTA = () => {
       <button className='btn btn-primary' onClick={handleViewResume}>
         {showResume ? 'Close Resume' : 'View Resume'}
       </button>
-    
+
       {showResume && (
         <div className='resume-container'>
-          <div className='iframe-wrapper'>
-          <iframe src={cv} title='Resume' className='resume-frame' width="100%"></iframe>
+          <div className='pdf-wrapper'>
+            <embed src={cv} type='application/pdf' className='resume-pdf' />
           </div>
+          <a href={cv} download='cv.pdf' className='download-btn'>
+            Download CV
+          </a>
         </div>
       )}
     </div>
