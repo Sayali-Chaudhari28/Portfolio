@@ -9,7 +9,13 @@
     overflow: hidden;
     transition: opacity 0.3s ease-in-out;
   }
-  
+  /* portfolio.css */
+.portfolio__container {
+  border: 1px  #c8c3c3; /* Add border to the section */
+  box-shadow: 0 2px 4px rgb(142, 135, 135); /* Add shadow to the section */
+  padding: 15px; /* Add padding to the section */
+  border-radius: 15px;
+}
   .custom-indicator img {
     width: 100%;
     height: 100%;
@@ -48,7 +54,46 @@
   .portfolio__item-content p {
     font-size: 14px;
     line-height: 1.5;
-    margin-bottom: 20px;
-    padding-left: 50px;
+    margin-bottom: 0;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-bottom: 50px;
   }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .container {
+    justify-content: flex-start;
+    margin-top: 0;
+  }
+  .project_description{
+    padding-bottom: 50px;
+  }
+
+  .portfolio__item {
+    width: 100%; /* Set the width to 100% to occupy the entire width */
+    margin: 20px 0;
+    padding: 20px; /* Adjust the padding to your desired value */
+  }
+
+  .portfolio__item-image {
+    display: none; /* Hide the image in mobile view */
+  }
+
+  .portfolio__item-content {
+    flex: 1; /* Expand the content to occupy the full width */
+    padding: 0;
+  }
+
+  .carousel .control-arrow {
+    display: none;
+  }
+
+  .carousel .carousel-status ul {
+    padding: 10px; /* Add padding to the dot indicators in mobile view */
+  }
+}
+
+
+
   

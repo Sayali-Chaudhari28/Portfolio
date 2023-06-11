@@ -16,7 +16,7 @@ const data = [
     id: 2,
     image: IMG2,
     title: "Microsoft Teams Clone",
-    description: "",
+    description: "A web application created using React and Node.js that replicates the core functionality of Microsoft Teams. The clone allows users to create and join teams, chat in real-time, make audio and video calls. It incorporates features like user authentication and video conferencing using WebRTC. The Microsoft Teams Clone provides a seamless and intuitive collaboration experience, enabling teams to communicate and work together effectively.",
   },
 ];
 
@@ -46,7 +46,7 @@ export const Portfolio = () => {
               </div>
               <div className='portfolio__item-content'>
                 <h3>{title}</h3>
-                <p>{description}</p>
+                <p className='project_description'>{description}</p>
               </div>
             </article>
           ))}
