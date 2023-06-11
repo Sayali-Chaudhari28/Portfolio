@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import cv from '../../assets/cv.pdf';
+import resume from '../../assets/cv.jpg';
 import './header.css';
 
 const CTA = () => {
@@ -17,8 +18,10 @@ const CTA = () => {
 
       {showResume && (
         <div className='resume-container'>
-          <div className='pdf-wrapper'>
-            <embed src={cv} type='application/pdf' className='resume-pdf' />
+          <div className='scrollable-wrapper'>
+            <div className='image-container'>
+              <img src={resume} alt='RESUME' className='resume-image' />
+            </div>
           </div>
           <a href={cv} download='cv.pdf' className='download-btn'>
             Download CV
