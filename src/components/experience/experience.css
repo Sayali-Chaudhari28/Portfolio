@@ -1,72 +1,85 @@
-.experience__container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+* {
+  box-sizing: border-box;
 }
 
-.experience__container > div{
-    background: var(--color-bg-variant);
-    padding: 2.4rem 5rem;
-    border-radius: 2rem;
-    border: 1px solid transparent;
-    transition: var(--transition);
+#experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.experience__container > div:hover{
-    background: transparent;
-    border-color: var(--color-primary-variant);
-    cursor: default;
+.container.experience__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.experience__container > div h3{
-    text-align: center;
+
+.container.experience__backend{
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.experience__content{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 2rem;
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
-.experience__details{
-    display: flex;
-    gap: 1rem;
+/* Float four columns side by side */
+.column {
+  float: left;
+  padding: 0 10px;
 }
 
-.experience__details-icon{
-    margin-top: 6px;
-    color: var(--color-primary);
+p {
+  text-align: center;
+  margin-top: 10px;
 }
 
-/* MEDIA QUEIRES */
-
-/* Medium devices */
-@media screen and (max-width:1024px) {
-    .experience__container{
-        grid-template-columns: 1fr;
-    } 
-
-    .experience__container > div{
-        width: 80%;
-        padding: 2rem;
-        margin: 0 auto;
-    }
-
-    .experience__content{
-        padding: 1rem;
-    }
-    
+/* Remove extra left and right margins, due to padding */
+.row {
+  margin: 0 -5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Small devices */
-@media screen and (max-width:600px) {
-    .experience__container{
-        gap: 1rem;
-    }
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-    .experience__container > div{
-        width: 100%;
-        padding: 2rem 1rem;
-    }
-    
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    flex: 0 0 33.33%;
+  max-width: 33.33%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(249, 244, 244, 0.2);
+  height: 150px;
+  /* Update the height to your desired value */
+  width: 100px;
+  /* Update the width to your desired value */
+  padding: 16px;
+  border: 1px solid rgb(173, 148, 148);
+  /* Add border */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
